@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ***** Reservation Us Area Starts ***** -->
+    <section class="section" id="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Connctez vous</h6>
+                            <h2>Veuillez vous connecter afin de pouvoir faire des réservations</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" method="post" action="{% url 'login' %}">
+                          {% csrf_token %}
+                          {% if messages %}
+                              <ul>
+                                  {% for message in messages %}
+                                      <li>{{ message }}</li>
+                                  {% endfor %}
+                              </ul>
+                          {% endif %}
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Veuillez vous connecter</h4>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input name="password" type="password" id="password" placeholder="password*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Se connecter</button>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <p style="color: black;">Vous n'avez pas de compte ? <a href="{% url 'signup' %}">S'inscrire maintenant</a></p>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

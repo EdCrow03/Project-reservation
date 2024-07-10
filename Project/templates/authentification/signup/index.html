@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="section" id="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Créer un compte</h6>
+                            <h2>Veuillez créer un compte pour pouvoir effectuer des reservations!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" method="post" action="{% url 'signup' %}">
+                          {% csrf_token %}
+                          {% if messages %}
+                              <ul class="messages">
+                                  {% for message in messages %}
+                                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                  {% endfor %}
+                              </ul>
+                          {% endif %}
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Créer un compte</h4>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="username" type="text" id="name" placeholder="Nom et prénom*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Adresse mail" required="">
+                            </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <input name="password1" type="password" id="password" placeholder="mot de passe*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <fieldset>
+                                  <input name="password2" type="password" id="password" placeholder="Confirmer le mot de passe*" required="">
+                                </fieldset>
+                              </div>
+                              <div class="col-lg-6">
+                                <!--<div id="filterDate2">    
+                                  <div class="input-group date" data-date-format="yyyy/mm/dd">-->
+                                    <input  name="date" id="date" type="date" class="form-control" placeholder="Date (yy-mm-dd)">
+                                    <!--<div class="input-group-addon" >
+                                      <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                  </div>
+                                </div> --> 
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                  <input name="phone" type="text" id="phone" placeholder="Numéro de téléphone*" required="">
+                                  </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Créer un compte</button>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <p style="color: black;">Vous avez déjà un compte ? <a href="{% url 'login' %}">Se connecter</a></p>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

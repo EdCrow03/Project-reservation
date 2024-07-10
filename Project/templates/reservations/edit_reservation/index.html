@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ***** Reservation Us Area Starts ***** -->
+    <section class="section" id="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Contactez-nous</h6>
+                            <h2>Ici, vous pouvez faire une réservation ou simplement venir dans notre café.</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="phone">
+                                    <i class="fa fa-phone"></i>
+                                    <h4>Numéro de téléphone</h4>
+                                    <span><a href="#">+212 523295142</a><br><a href="#">+212 689534585</a></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="message">
+                                    <i class="fa fa-envelope"></i>
+                                    <h4>Emails</h4>
+                                    <span><a href="#">Contact@Livedinner.com</a><br><a href="#">Reserver@Livedinner.com</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" action="{% url 'reservations:edit_reservation' reservation.id%}" method="post">
+                            {% csrf_token %}
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Modifier votre réservation:</h4>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                              <fieldset>
+                                <select name="table_type" id="type-table">
+                                    <option value="table_type">Type de table</option>
+                                    <option value="Régulière" {% if reservation.table_type == '1' %}selected{% endif %}>Régulière</option>
+                                    <option value="VIP" {% if reservation.table_type == '2' %}selected{% endif %}>VIP</option>
+                                </select>
+                            </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                  <select name="number_of_guests" id="number-guests">
+                                      <option value="number_of_guests">Nombre d'invités</option>
+                                      <option value="1" {% if reservation.number_of_guests == '1' %}selected{% endif %}>1</option>
+                                      <option value="2" {% if reservation.number_of_guests == '2' %}selected{% endif %}>2</option>
+                                      <option value="3" {% if reservation.number_of_guests == '3' %}selected{% endif %}>3</option>
+                                      <option value="4" {% if reservation.number_of_guests == '4' %}selected{% endif %}>4</option>
+                                      <option value="5" {% if reservation.number_of_guests == '5' %}selected{% endif %}>5</option>
+                                      <option value="6" {% if reservation.number_of_guests == '6' %}selected{% endif %}>6</option>
+                                      <option value="7" {% if reservation.number_of_guests == '7' %}selected{% endif %}>7</option>
+                                      <option value="8" {% if reservation.number_of_guests == '8' %}selected{% endif %}>8</option>
+                                      <option value="9" {% if reservation.number_of_guests == '9' %}selected{% endif %}>9</option>
+                                      <option value="10" {% if reservation.number_of_guests == '10' %}selected{% endif %}>10</option>
+                                      <option value="11" {% if reservation.number_of_guests == '11' %}selected{% endif %}>11</option>
+                                      <option value="12" {% if reservation.number_of_guests == '12' %}selected{% endif %}>12</option>
+                                  </select>
+                              </fieldset>
+                          </div>
+                            <div class="col-lg-6">
+                              <input name="reservation_date" id="date" type="date" class="form-control" placeholder="Date (YYYY-MM-DD)" value="{{ reservation.reservation_date|date:'Y-m-d' }}">
+                          </div>
+                            <input type="hidden" name="reservation_id" value="{{ reservation.id }}">
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                  <select name="reservation_time" id="time">
+                                      <option value="time">Temps</option>
+                                      <option value="Breakfast" {% if reservation.reservation_time == 'Breakfast' %}selected{% endif %}>Petit-Déjeuner</option>
+                                      <option value="Lunch" {% if reservation.reservation_time == 'Lunch' %}selected{% endif %}>Déjeuner</option>
+                                      <option value="Dinner" {% if reservation.reservation_time == 'Dinner' %}selected{% endif %}>Dîner</option>
+                                  </select>
+                              </fieldset>
+                          </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Message" required="">{{ reservation.message }}</textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Modifier la reservation</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,705 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <div id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="left-content">
+                        <div class="inner-content">
+                            <h4>Live Dinner</h4>
+                            <h6>La meilleure expérience</h6>
+                            <div class="main-white-button scroll-to-section">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver<i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="main-banner header-text">
+                        <div class="Modern-Slider">
+                          <!-- Item -->
+                          <div class="item">
+                            <div class="img-fill">
+                                <img src="{% static 'images/slide-01.jpg' %}" alt="">
+                            </div>
+                          </div>
+                          <!-- // Item -->
+                          <!-- Item -->
+                          <div class="item">
+                            <div class="img-fill">
+                                <img src="{% static 'images/slide-02.jpg' %}" alt="">
+                            </div>
+                          </div>
+                          <!-- // Item -->
+                          <!-- Item -->
+                          <div class="item">
+                            <div class="img-fill">
+                                <img src="{% static 'images/slide-03.jpg' %}" alt="">
+                            </div>
+                          </div>
+                          <!-- // Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** About Area Starts ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>LISEZ NOTRE HISTOIRE </h6>
+                            <h2>Bienvenue à Live Dinner !</h2>
+                        </div>
+                        <p>Depuis notre ouverture en 2024, Live Dinner s'engage à offrir une expérience culinaire inégalée à nos clients. Situé au cœur de Rabat</p>
+                        <p>Notre restaurant combine une ambiance chaleureuse et accueillante avec des plats exquis préparés à partir des ingrédients les plus frais et de la plus haute qualité.</p>
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="{% static 'images/about-thumb-01.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img src="{% static 'images/about-thumb-02.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img src="{% static 'images/about-thumb-03.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-content">
+                        <div class="thumb">
+                            <a rel="nofollow" href="http://youtube.com"><i class="fa fa-play"></i></a>
+                            <img src="{% static 'images/about-video-bg.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Area Ends ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    <section class="section" id="menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-heading">
+                        <h6>Nos Menus</h6>
+                        <h2>HEURE DU THÉ & DÎNER</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item-carousel">
+            <div class="col-lg-12">
+                <div class="owl-menu-item owl-carousel">
+                    <div class="item">
+                        <div class='card card1'>
+                            <div class="price"><h6>30dh</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Gâteau au Chocolat</h1>
+                              <p class='description'>Moelleux, riche en chocolat</p>
+                              <div class="main-text-button">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver<i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card2'>
+                            <div class="price"><h6>55dh</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Crêpe Classique</h1>
+                              <p class='description'>Crêpe légère, moelleuse et savoureuse</p>
+                              <div class="main-text-button">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver<i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card3'>
+                            <div class="price"><h6>18dh</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Pain Classique</h1>
+                              <p class='description'>Pain moelleux, traditionnel et délicieux</p>
+                              <div class="main-text-button">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver<i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card4'>
+                            <div class="price"><h6>24dh</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Gâteau au Fromage</h1>
+                              <p class='description'>Crémeux, myrtilles fraîches</p>
+                              <div class="main-text-button">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card5'>
+                            <div class="price"><h6>13dh</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Cupcake Classique</h1>
+                              <p class='description'>Moelleux, glaçage sucré, élégant</p>
+                              <div class="main-text-button">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class='card card3'>
+                            <div class="price"><h6>9dh</h6></div>
+                            <div class='info'>
+                              <h1 class='title'>Gâteau Classique</h1>
+                              <p class='description'>Tendre, classique, irrésistible</p>
+                              <div class="main-text-button">
+                                {% if request.session.connected %}
+                                    <div class="scroll-to-section"><a href="#reservation">Reserver <i class="fa fa-angle-down"></i></a></div>
+                                {% else %}
+                                    <div class="scroll-to-section"><a href="{% url 'login' %}">Reserver<i class="fa fa-angle-down"></i></a></div>
+                                {% endif %}
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Menu Area Ends ***** -->
+
+    <!-- ***** Chefs Area Starts ***** -->
+    <section class="section" id="chefs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Nos Chefs</h6>
+                        <h2>Nous offrons les meilleurs ingrédients pour vous.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="{% static 'images/chefs-01.jpg' %}" alt="Chef #1">
+                        </div>
+                        <div class="down-content">
+                            <h4>Randy Walker</h4>
+                            <span>Pastry Chef</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                            <img src="{% static 'images/chefs-02.jpg' %}" alt="Chef #2">
+                        </div>
+                        <div class="down-content">
+                            <h4>David Martin</h4>
+                            <span>Cookie Chef</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                            </ul>
+                            <img src="{% static 'images/chefs-03.jpg' %}" alt="Chef #3">
+                        </div>
+                        <div class="down-content">
+                            <h4>Peter Perkson</h4>
+                            <span>Pancake Chef</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Chefs Area Ends ***** -->
+
+    <!-- ***** Reservation Us Area Starts ***** -->
+    <!-- if the user is not connected ** 
+     <section class="section" id="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Connctez vous</h6>
+                            <h2>Veuillez vous connecter afin de pouvoir faire des réservations</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="post">
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Veuillez vous connecter</h4>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <input name="password" type="password" id="password" placeholder="password*" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Se connecter</button>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <p style="color: black;">Vous n'avez pas de compte ? <a href="signup.html">S'inscrire maintenant</a></p>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    >-->
+    {% if request.session.connected %}
+    <section class="section" id="reservation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Contactez-nous</h6>
+                            <h2>Ici, vous pouvez faire une réservation ou simplement venir dans notre café.</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="phone">
+                                    <i class="fa fa-phone"></i>
+                                    <h4>Numéro de téléphone</h4>
+                                    <span><a href="#">+212 523295142</a><br><a href="#">+212 689534585</a></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="message">
+                                    <i class="fa fa-envelope"></i>
+                                    <h4>Emails</h4>
+                                    <span><a href="#">Contact@Livedinner.com</a><br><a href="#">Reserver@Livedinner.com</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contact" action="{% url 'reservations:create_reservation' %}" method="post">
+                            {% csrf_token %}
+                          <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Réserver une table</h4>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <fieldset>
+                                    <select value="type-table" name="type-table" id="type-table">
+                                        <option value="number-guests">Type de la table</option>
+                                        <option name="1" id="1">Régulière</option>
+                                        <option name="2" id="2">VIP</option>
+                                    </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <select value="number-guests" name="number-guests" id="number-guests">
+                                    <option value="number-guests">Nombre d'invités</option>
+                                    <option name="1" id="1">1</option>
+                                    <option name="2" id="2">2</option>
+                                    <option name="3" id="3">3</option>
+                                    <option name="4" id="4">4</option>
+                                    <option name="5" id="5">5</option>
+                                    <option name="6" id="6">6</option>
+                                    <option name="7" id="7">7</option>
+                                    <option name="8" id="8">8</option>
+                                    <option name="9" id="9">9</option>
+                                    <option name="10" id="10">10</option>
+                                    <option name="11" id="11">11</option>
+                                    <option name="12" id="12">12</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6">              
+                                    <input  name="date" id="date" type="date" class="form-control" placeholder="Date (YYYY-MM-DD)"> 
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <select value="time" name="time" id="time">
+                                    <option value="time">Temps</option>
+                                    <option name="Breakfast" id="Breakfast">Petit-Déjeuner</option>
+                                    <option name="Lunch" id="Lunch">Déjeuner</option>
+                                    <option name="Dinner" id="Dinner">Dîner</option>
+                                </select>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button-icon">Réserver</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <!-- ***** Reservation Area Ends ***** -->
+
+    <!-- ***** Menu Area Starts ***** -->
+    <section class="section" id="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="section-heading">
+                        <h6>Live Dinner</h6>
+                        <h2>Les offres spéciaux de la semaine!</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-3">
+                                        <ul>
+                                          <li><a href='#tabs-1'><img src="{% static 'images/tab-icon-01.png' %}" alt="">Petit-Déjeuner</a></li>
+                                          <li><a href='#tabs-2'><img src="{% static 'images/tab-icon-02.png' %}" alt="">Déjeuner</a></a></li>
+                                          <li><a href='#tabs-3'><img src="{% static 'images/tab-icon-03.png' %}" alt="">Dîner</a></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <section class='tabs-content'>
+                                <article id='tabs-1'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-01.png' %}" alt="">
+                                                            <h4>Salade fraîche au poulet</h4>
+                                                            <p>Légère, savoureuse, poulet frais</p>
+                                                            <div class="price">
+                                                                <h6>65dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-02.png' %}" alt="">
+                                                            <h4>Jus d'orange frais</h4>
+                                                            <p>Rafraîchissant, vitaminé, pur jus d'orange</p>
+                                                            <div class="price">
+                                                                <h6>22dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-03.png' %}" alt="">
+                                                            <h4>Salade de fruits frais</h4>
+                                                            <p>Colorée, rafraîchissante, assortiment de fruits</p>
+                                                            <div class="price">
+                                                                <h6>55dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-04.png' %}" alt="">
+                                                            <h4>Omelette aux œufs classique</h4>
+                                                            <p>Classique, moelleuse, garnie au choix</p>
+                                                            <div class="price">
+                                                                <h6>30dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-05.png' %}" alt="">
+                                                            <h4>Soupe de carottes crémeuse</h4>
+                                                            <p>Crémeuse et réconfortante, pleine de saveur</p>
+                                                            <div class="price">
+                                                                <h6>40dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-06.png' %}" alt="">
+                                                            <h4>Omelette au fromage crémeuse</h4>
+                                                            <p>Crémeuse et savoureuse, mélange parfait</p>
+                                                            <div class="price">
+                                                                <h6>32dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  
+                                <article id='tabs-2'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-04.png' %}" alt="">
+                                                            <h4>Omelette aux œufs classique</h4>
+                                                            <p>Crémeuse et savoureuse, mélange parfait</p>
+                                                            <div class="price">
+                                                                <h6>32dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-05.png' %}" alt="">
+                                                            <h4>Soupe de carottes crémeuse</h4>
+                                                            <p>Crémeuse et réconfortante</p>
+                                                            <div class="price">
+                                                                <h6>40dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-06.png' %}" alt="">
+                                                            <h4>Omelette au fromage fondant</h4>
+                                                            <p>Fromage fondu dans une omelette</p>
+                                                            <div class="price">
+                                                                <h6>30dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-01.png' %}" alt="">
+                                                            <h4>Salade fraîche au poulet</h4>
+                                                            <p>Fraîcheur et saveurs de saison</p>
+                                                            <div class="price">
+                                                                <h6>65dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-02.png' %}" alt="">
+                                                            <h4>Jus d'orange frais</h4>
+                                                            <p>Rafraîchissant et plein de vitamines</p>
+                                                            <div class="price">
+                                                                <h6>22dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-03.png' %}" alt="">
+                                                            <h4>Salade de fruits rafraîchissante</h4>
+                                                            <p>Colorée et rafraîchissante, mélange de fruits</p>
+                                                            <div class="price">
+                                                                <h6>40dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  
+                                <article id='tabs-3'>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="left-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'assets/images/tab-item-05.png' %}" alt="">
+                                                            <h4>Omelette aux œufs</h4>
+                                                            <p>Simple et délicieuse, pleine de saveur</p>
+                                                            <div class="price">
+                                                                <h6>30dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'assets/images/tab-item-02.png' %}" alt="">
+                                                            <h4>Jus d'orange frais</h4>
+                                                            <p>Rafraîchissant et plein de vitamines</p>
+                                                            <div class="price">
+                                                                <h6>22dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'assets/images/tab-item-03.png' %}" alt="">
+                                                            <h4>Salade de fruits frais</h4>
+                                                            <p>Colorée et rafraîchissante, mélange varié de fruits</p>
+                                                            <div class="price">
+                                                                <h6>55dh/h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="row">
+                                                <div class="right-list">
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-06.png' %}" alt="">
+                                                            <h4>Salade fraîche au poulet</h4>
+                                                            <p>Saine et délicieuse, poulet frais accompagné</p>
+                                                            <div class="price">
+                                                                <h6>65dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-05.png' %}" alt="">
+                                                            <h4>Soupe de carottes crémeuse</h4>
+                                                            <p>Crémeuse et réconfortante, pleine de saveur</p>
+                                                            <div class="price">
+                                                                <h6>30dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img src="{% static 'images/tab-item-04.png' %}" alt="">
+                                                            <h4>Omelette au fromage</h4>
+                                                            <p>Savoureuse fusion d'œufs et fromage</p>
+                                                            <div class="price">
+                                                                <h6>32dh</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>   
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Chefs Area Ends ***** --> 
+    {% if request.session.connected %}
+    <script>
+        window.intercomSettings = {
+          api_base: "https://api-iam.intercom.io",
+          app_id: "pjiz0z46",
+          user_id: "{{ request.user.id|escapejs }}", // IMPORTANT : remplacez « user.id » par la variable que vous utilisez pour capturer l’identifiant de l’utilisateur
+          name: "{{ request.user.nom_et_prenom|escapejs }}", // IMPORTANT : remplacez « user.name » par la variable que vous utilisez pour capturer le nom de l’utilisateur
+          email: "{{ request.user.email|escapejs }}", // IMPORTANT : remplacez « user.email » par la variable que vous utilisez pour capturer l’adresse e-mail de l’utilisateur
+          created_at: "{{ request.user.date_joined|date:"U" }}", // IMPORTANT : remplacez « user.createdAt » par la variable que vous utilisez pour capturer la date d’inscription de l’utilisateur
+        };
+      </script>
+      
+      
+      <script>
+        // Nous avons pré-rempli l’ID de votre application dans l’URL du widget : 'https://widget.intercom.io/widget/pjiz0z46'
+        (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pjiz0z46';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+      </script>
+        {% endif %}
+    {% endblock content %}

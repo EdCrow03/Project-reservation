@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="hhttps://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" href="{% static 'reservation/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2>Les réservations du client: <b>{{ request.session.nom_et_prenom }}</b></h2>
+          </div>
+          <div class="col-sm-4">
+            <button type="button" class="btn btn-info add-new">
+                <a href="{% url 'index' %}#reservation">
+                    <i class="fa fa-plus"> Ajouter une nouvelle réservation</i>
+                </a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Type de Table:</th>
+            <th>Date de reservation:</th>
+            <th>Nombre d'invités</th>
+            <th>Temps de Reservation</th>
+            <th>Notes:</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.table_type }}</td>
+            <td>{{ reservation.reservation_date }}</td>
+            <td>{{ reservation.number_of_guests }}</td>
+            <td>{{ reservation.reservation_time }}</td>
+            <td>{{ reservation.message }}</td>
+            <td>{{ reservation.status }}</td>
+            <td><a class="edit" href="{% url 'reservations:edit_reservation' reservation.id %}" title="Edit" data-toggle="tooltip">
+              <i class="material-icons"></i>
+          </a>
+          <form id="form-delete-{{ reservation.id }}" action="{{ reservation.get_delete_url }}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <a class="delete-btn" href="#" onclick="deleteReservation({{ reservation.id }})" title="Supprimer" data-toggle="tooltip">
+              <i class="material-icons"></i>
+          </a>
+          </form> 
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="{% static 'reservation/script.js' %}"></script>
+  <script>
+    function deleteReservation(reservationId) {
+        if (confirm('Êtes-vous sûr de vouloir supprimer cette réservation ?')) {
+            var form = document.getElementById('form-delete-' + reservationId);
+            form.submit();
+        }
+    }
+</script>
+{% endblock content %}
